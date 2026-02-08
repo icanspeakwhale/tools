@@ -1,0 +1,13 @@
+#!Fromurl=https://gist.githubusercontent.com/Yu9191/45d3784ba323e9d2eac25aa3e0acf3e6/raw/Reven.sgmodule
+#!name=Revenuecat & Rc-backup & visionarytech
+#!author=Original author @langkhach270389 @fly
+
+
+[URL Rewrite]
+^https:\/\/(api\.revenuecat\.com|api\.rc-backup\.com)\/.+\/(receipts$|subscribers\/[^/]+$) https://rc-backup.lovebabyforever.workers.dev header
+^https:\/\/(api\.revenuecat\.com|api\.rc-backup\.com)\/.+\/(receipts$|subscribers\/[^/]+$) https://reven.lovebabyforever.workers.dev header
+^https:\/\/rc\.visionarytech\.ltd\/.+\/(receipts$|subscribers\/[^/]+$) https://rc.lovebabyforever.workers.dev header
+^https:\/\/revenue\.cuto\.app\/.+\/(receipts$|subscribers\/[^/]+$) https://revencuto.lovebabyforever.workers.dev header
+^https:\/\/(api\.revenuecat\.com|api\.rc-backup\.com)\/.+\/(?:receipts|subscribers\/[^/]+(?:\/attributes)?)$ https://rc-backup.lovebabyforever.workers.dev header
+[MITM]
+hostname = %APPEND% api.revenuecat.com, api.rc-backup.com, rc.visionarytech.ltd, revenue.cuto.app
