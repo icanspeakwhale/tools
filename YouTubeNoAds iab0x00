@@ -1,6 +1,6 @@
 #!fromurl=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rewrite/YouTubeNoAd.sgmodule
 #!name=YouTubeNoAds
-#!desc=Apply Youtube&Youtube Music Go to ads
+#!desc=Block Ads in YouTube and YouTube Music. Configuration options for Chinese
 #!arguments=Block the upload button:true, Block the segment button:true, Hide Shorts button:true, Enable debug mode:false, Subtitles translate languages:off, Lyrics translate language:off
 #!arguments-desc=\n▶ Parameter description:\n\n - Shield button: Enabled by default, can be switched manually\n\n - Debug mode: Off by default, no need to switch for non-debugging\n\n - Translation language: Off by default, can customize the language code\n\n\n▶ Language code：\n\n - The translation language can be customized according to your needs, and the language code is followed Google Translate Languages Codes，Examples are as follows↓\n\n - In the letter: zh-Hans，日语: ja，韩语: ko，西语: es，法语: fr
 #!author=iab0x00，thanks to Maasea
