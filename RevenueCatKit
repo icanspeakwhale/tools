@@ -1,0 +1,27 @@
+#!fromurl=https://raw.githubusercontent.com/KawOat9/Scripts/refs/heads/main/Shadowrocket/kcollections.sgmodule
+#!name=RevenueCatKit
+#!desc=Collections Unlock - Module
+#!author=https://github.com/KawOat9/Scripts/blob/main/Shadowrocket/kcollections.sgmodule
+#!category=APP
+#!icon = https://raw.githubusercontent.com/KawOat9/icons/main/RevenueCatKit.png
+#!translated to English
+
+
+[Script]
+# 1. Unlock only apps (StepsApp) - Put it on top so that it works first.
+StepsApp_Unlock = type=http-response,pattern=^https?:\/\/api\.revenuecat\.com\/v1\/(receipts|subscribers)\/(?!(.*\/)),requires-body=1,script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/StepsApp.js
+
+# 2. Unlock the universe (Universal RevenueCat) - Intercept common apps that are used RevenueCat
+# Supports both api.revenuecat.com และ api.rc-backup.com
+Universal_RC_Unlock = type=http-response,pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/v1\/(subscribers|receipts)\/([^/]+|$),requires-body=1,script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/BuyRevenueCat%40ddgksf2013.js
+
+# 3. Delete ETag to prevent remembering the original values (use the script you have).
+RC_ETag_Cleaner = type=http-request,pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/v1\/(subscribers|receipts),script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/deleteHeaderNotif.js
+
+Bazaart = type=http-response, pattern=^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt, script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/Bazaart.js, requires-body=true, max-size=-1, timeout=60
+
+# ～ BuyiTunes (Universal iTunes)
+BuyiTunesVip = type=http-response, pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$, script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/BuyiTunes%40ddgksf2013.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% buy.itunes.apple.com, api.revenuecat.com, api.rc-backup.com
