@@ -1,0 +1,73 @@
+#!name=All-in-One Unlock for Loon 🎈
+#!desc=Collection of unlock scripts by N9dev/iSteal
+#!authorurl=https://github.com/KawOat9/Scripts/blob/main/Loon/All-in-One%20Unlock%20(N9dev%20Port).lpx
+#!icon=https://raw.githubusercontent.com/KawOat9/icons/main/iSteal-it.png
+
+[Rewrite]
+# RevenueCat Force Refresh
+^https?://api.revenuecat.com/.+/(receipts$|subscribers/?(.*?)*$) header-del X-RevenueCat-ETag
+^https?://api.revenuecat.com/.+/(receipts$|subscribers/?(.*?)*$) header-del x-revenuecat-etag
+
+[Script]
+# --- RevenueCat General ---
+http-response ^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$) script-path=https://N9dev-dev.github.io/SL/scripts/ARC.js, requires-body=true, tag=iSteal_RC
+
+http-request ^https:\/\/api\.(revenuecat|rc-backup)\.com\/v1\/(subscribers|receipts) script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/deleteHeaderNotif.js, tag=RC_ETag_Cleaner
+
+# --- Specific Apps ---
+http-response https://api.adapty.io/api/v1/sdk/analytics/profiles script-path=https://N9dev-dev.github.io/SL/scripts/ADPTY.js, requires-body=true, tag=Adapty
+
+http-response api\.tidal\.com/v1/users/(\d+)/subscription\?countryCode=([A-Z]{2})&deviceType=[A-Z]+&locale=[a-z]+&platform=[A-Z]+ script-path=https://N9dev-dev.github.io/SL/scripts/TIDAL.js, requires-body=true, tag=TIDAL
+
+http-response https://order.creativeappnow.com/iap/receipt script-path=https://N9dev-dev.github.io/SL/scripts/Facemoji.js, requires-body=true, tag=Facemoji
+
+http-response https:\/\/license\.pdfexpert\.com\/api\/2\.0\/(calendarslite|pdfexpert6|documents)\/subscription\/(refresh|check) script-path=https://N9dev-dev.github.io/SL/scripts/Documents.js, requires-body=true, tag=PDF_Expert
+
+http-response ^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt script-path=https://N9dev-dev.github.io/SL/scripts/BDIts.js, requires-body=true, tag=iTunes_Receipt
+
+http-response us-central1-muslim-pro-app.cloudfunctions.net/GetUserPremiumInfo script-path=https://N9dev-dev.github.io/SL/scripts/MuslimPro.js, requires-body=true, tag=MuslimPro
+
+http-response ^https?:\/\/subscription\.grammarly\.com\/api\/v1\/subscription$ script-path=https://n9dev-dev.github.io/SL/scripts/Grammarly.js, requires-body=true, tag=Grammarly
+
+http-response api.esound.app/account script-path=https://n9dev-dev.github.io/SL/scripts/eSound.js, requires-body=true, tag=eSound
+
+http-response https://api.purchasely.io/paab/user_purchases script-path=https://n9dev-dev.github.io/SL/scripts/Tezza.js, requires-body=true, tag=Tezza
+
+http-response api.blinkist.com/v4/me/access script-path=https://n9dev-dev.github.io/SL/scripts/Blinkist.js, requires-body=true, tag=Blinkist
+
+http-response api.gptkeyboard.app/api/v1/user/self script-path=https://N9dev-dev.github.io/SL/scripts/AnswerAI.js, requires-body=true, tag=AnswerAI
+
+http-response prod.studysmarter.de/payments/info script-path=https://N9dev-dev.github.io/SL/scripts/Vaia.js, requires-body=true, tag=Vaia
+
+http-response api.qonversion.io/v1/user/init script-path=https://N9dev-dev.github.io/SL/scripts/QNVRN.js, requires-body=true, tag=Qonversion
+
+http-response https://api.mwm-users.com/me/features script-path=https://N9dev-dev.github.io/SL/scripts/edjingMix.js, requires-body=true, tag=EdjingMix
+
+http-response https://api-fra.vivacut.com/api/rest/commerce/integrate/vip/perform script-path=https://N9dev-dev.github.io/SL/scripts/VivaCut.js, requires-body=true, tag=VivaCut
+
+http-response https://carrotweather.herokuapp.com/parse/functions/findSubscriptionsForUserId script-path=https://N9dev-dev.github.io/SL/scripts/Carrot.js, requires-body=true, tag=CarrotWeather
+
+http-response https://lapi.photomath.net/v5/me script-path=https://N9dev-dev.github.io/SL/scripts/Photomath.js, requires-body=true, tag=Photomath
+
+http-request https://lcs-mobile-cops.adobe.io/mobiles/access_profile/v3 script-path=https://N9dev-dev.github.io/SL/scripts/Lightroom.js, requires-body=true, tag=Lightroom
+
+http-request ^https?://api.revenuecat.com/.+/(receipts$|subscribers/?(.*?)*$) script-path=https://N9dev-dev.github.io/SL/scripts/VSCO.js, requires-body=true, tag=VSCO
+
+http-response https://api-account.kinemasters.com/v2/user/subscribe script-path=https://N9dev-dev.github.io/SL/scripts/KineMaster.js, requires-body=true, tag=KineMaster
+
+http-request https://api.picsart.com/gw-v2/shop/subscription/apple/purchases script-path=https://N9dev-dev.github.io/SL/scripts/PicsArt.js, requires-body=true, tag=PicsArt
+
+http-response https://us-central1-alight-creative.cloudfunctions.net/getAccountStatusAndLicenses script-path=https://N9dev-dev.github.io/SL/scripts/AlightMotion.js, requires-body=true, tag=AlightMotion
+
+http-response api.sandbox.love/accounts/current script-path=https://N9dev-dev.github.io/SL/scripts/SandBox.js, requires-body=true, tag=Sandbox
+
+# --- TradingView ---
+http-response www.tradingview.com/order/apple/device/ script-path=https://N9dev-dev.github.io/SL/scripts/TradingViewDeviceReceipt.js, requires-body=true, tag=TradingView_Device
+
+http-response www.tradingview.com/order/apple/receipt/ script-path=https://N9dev-dev.github.io/SL/scripts/TradeViewAppleReceipt.js, requires-body=true, tag=TradingView_Receipt
+
+http-response www.tradingview.com/api/v1/user/profile/me/ script-path=https://N9dev-dev.github.io/SL/scripts/TradingViewProf.js, requires-body=true, tag=TradingView_Profile
+
+[MITM]
+hostname = api.revenuecat.com, buy.itunes.apple.com, api.picsart.com, api-account.kinemasters.com, us-central1-alight-creative.cloudfunctions.net, api.adapty.io, carrotweather.herokuapp.com, lapi.photomath.net, lcs-mobile-cops.adobe.io, order.creativeappnow.com, api.mwm-users.com, us-central1-muslim-pro-app.cloudfunctions.net, api.gptkeyboard.app, prod.studysmarter.de, api.qonversion.io, api.blinkist.com, subscription.grammarly.com, api.esound.app, api.purchasely.io, www.tradingview.com, api.tidal.com, license.pdfexpert.com, api-fra.vivacut.com, api.sandbox.love
+
