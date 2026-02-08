@@ -1,0 +1,69 @@
+#!url=https://raw.githubusercontent.com/Guding88/Script/main/APPheji_Guding.sgmodule
+#!name=APP unlocks the collection-骨钉
+#!desc=https://t.me/Guding88
+#!homepage=https://github.com/Guding88/Script/blob/main/Readme.md
+#!arguments=Revenuecat:Clear cache
+#!arguments-desc=[Parameter settings]\n1. Revenuecat: By default, the cache clearing script is enabled, and if you need to turn it off, you can fill in the attribute field“#”。
+
+[Script]
+
+# iTunes Collection
+iTunesCollection= type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$,script-path=https://raw.githubusercontent.com/Guding88/Script/main/APPheji_iTunes.js
+
+# Revenuecat Collection
+RevenuecatCollection= type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.(revenuecat|rc-backup)\.com\/v1\/(subscribers\/[^\/]+$|receipts$),script-path=https://raw.githubusercontent.com/Guding88/Script/main/APPheji_Revenuecat.js
+{{{Revenuecat}}}= type=http-request,requires-body=0,pattern=^https?:\/\/api\.(revenuecat|rc-backup)\.com\/v1\/(subscribers\/[^\/]+$|receipts$),script-path=https://raw.githubusercontent.com/Guding88/Script/main/APPheji_Revenuecat.js
+
+# CountThings from Photos
+CountThings= type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/my\.countingthings\.com\/api\/v2.0\/users\/GetUserAndSubscription,script-path=https://raw.githubusercontent.com/Guding88/Script/main/CountThings.js
+
+# Cubox
+Cubox= type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/cubox\.(cc|pro)\/c\/api\/userInfo,script-path=https://raw.githubusercontent.com/Guding88/Script/main/Cubox.js
+
+# NFC Scanner Tool for iPhone
+NFC= type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.qonversion\.io\/v1\/user\/init,script-path=https://raw.githubusercontent.com/Guding88/Script/main/NFC.js
+
+# PocketLists
+PocketLists= type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/pocketlists\.com\/api\/v1\/pocketlists.me.get,script-path=https://raw.githubusercontent.com/Guding88/Script/main/PocketLists.js
+
+# Prisma&Lensa
+Prisma&Lensa= type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/(api|appapi)\.neuralprisma\.com\/receipt\/ios\/status\/(prisma|lensa),script-path=https://raw.githubusercontent.com/Guding88/Script/main/Prisma.js
+
+# ToonMe
+ToonMe= type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/purchases\.ws\.pho\.to\/api\/v2\/apple\/verifyReceipt,script-path=https://raw.githubusercontent.com/Guding88/Script/main/ToonMe.js
+
+# FIMO
+FIMO= type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/server\.zbisq\.com\/fimo-user\/user,script-path=https://raw.githubusercontent.com/Guding88/Script/main/FIMO.js
+
+# Focos
+Focos= type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/focos\.oracle\.bendingspoonsapps\.com\/v2\/users\/setup,script-path=https://raw.githubusercontent.com/Guding88/Script/main/Focos.js
+
+# Agenda
+Agenda= type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/accounts\.agenda\.com\/users,script-path=https://raw.githubusercontent.com/Guding88/Script/main/Agenda.js
+
+# FoodCa
+FoodCa= type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/service-ei2k47mp-1251731618\.bj\.apigw\.tencentcs\.com/release\/aifood_order,script-path=https://raw.githubusercontent.com/Guding88/Script/main/FoodCa.js
+
+# CARROT Weather
+CARROT Weather= type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/carrotweather\.herokuapp\.com\/parse\/functions\/findSubscriptionsForUserId,script-path=https://raw.githubusercontent.com/Guding88/Script/main/CARROTWeather.js
+
+# PhotoGrid
+PhotoGrid= type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/pgapi\.ksmobile\.com\/v1\/ios\/auth,script-path=https://raw.githubusercontent.com/Guding88/Script/main/PhotoGrid.js
+
+# FocosLive
+FocosLive= type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/focoslive\.oracle\.bendingspoonsapps\.com\/v2\/users\/setup,script-path=https://raw.githubusercontent.com/Guding88/Script/main/FocosLive.js
+
+# everyday
+everyday= type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.everyday\.app\/users,script-path=https://raw.githubusercontent.com/Guding88/Script/main/everyday.js
+
+# DreamFace
+DreamFace= type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/dreamfaceapp\.com\/df-server\/user\/save_user_login,script-path=https://raw.githubusercontent.com/Guding88/Script/main/DreamFace.js
+
+
+[MITM]
+
+hostname = %APPEND% buy.itunes.apple.com, api.revenuecat.com, api.rc-backup.com, my.countingthings.com, cubox.cc, cubox.pro, api.qonversion.io, pocketlists.com, api.neuralprisma.com,appapi.neuralprisma.com, www.evestudio.cn, purchases.ws.pho.to, api.busuu.com, api.expingworld.com, api.leapmobile.cloud, explorer.tratao.com, www.1314zhilv.com, api.getdailyart.com, kc.xinli001.com, www.freshhome.top, api.stats.fm, api.boyasec.com, jietu6.com, 1jietu.com, app.yiyan.art, integral2.dasyibalang.com,www.zomoplan.com,yopu.co,diary-id.sumi.io, server.zbisq.com, focos.oracle.bendingspoonsapps.com, bingxiang.51wnl-cq.com, api.to-future.net, 19700.com, api.tipsoon.com, app.huashijie.art, storevalidator.easybrain.com, box.timeblocks.com, fz68resapi.imendon.com,api.shouqilai.cn, lchttpapi.xczim.com, ruanmianmian.xinzhi.space, *.duitang.com, xianbeikeji.com, sz.szsszykj.com, acs.m.taobao.com, accounts.agenda.com, judouapp.com, openapi.qian-gua.com, service-ei2k47mp-1251731618.bj.apigw.tencentcs.com, lengapp.com, newos.glassmarket.cn, neckgo.wedea.cn, getway-plan.bjsywb.cn, gw.aoscdn.com, api.wemore.com, jz.wacai.com, api0.easeprime.com, carrotweather.herokuapp.com, pgapi.ksmobile.com, api.qingning6.com, focoslive.oracle.bendingspoonsapps.com, api.every.day.app, dreamfaceapp.com
+
+
+
+
