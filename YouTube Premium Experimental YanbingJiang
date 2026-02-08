@@ -1,0 +1,13 @@
+#!fromurl=https://raw.githubusercontent.com/YanbingJiang/Shadowrocket_diy_rules/main/Modules/YT-Premium-Experimental.module
+#!name=YouTube Premium Experimental
+#!desc=Youtube Ad Full blocker with PIP player (Experimental)
+#!arguments=requestService:https://stream.maasea.workers.dev,blockUpload:true,blockImmersive:true,blockShorts:false,captionLang:off,lyricLang:off
+# Origin Author: @Maasea
+# Translated and refined for shadowrocket
+
+[URL Rewrite]
+^https:\/\/youtubei\.googleapis\.com\/(youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch))(\?(.*))?$ https://stream.maasea.workers.dev/$1?blockUpload=true&blockImmersive=true&blockShorts=true&captionLang=off&lyricLang=off&$4 307
+(^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&ack.*) "https://init-stream.maasea.workers.dev/?url=$1" header
+
+[MITM]
+hostname = %APPEND% *.googlevideo.com, youtubei.googleapis.com
