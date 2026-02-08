@@ -1,0 +1,11 @@
+#!name=Loon iTunes Receipt ✨
+#!desc=Unlock Collection
+#!author=https://github.com/KawOat9/Scripts/blob/main/Loon/iTunesReceipt.lpx
+#!icon=https://raw.githubusercontent.com/KawOat9/icons/main/receipt-apple.png
+
+[Script]
+# iTunes Receipt
+http-response ^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/iTunesReceipt.js, requires-body=true, timeout=60, tag=iTunesReceipt
+
+[MITM]
+hostname = buy.itunes.apple.com
