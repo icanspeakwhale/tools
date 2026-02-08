@@ -1,0 +1,13 @@
+#!fromrurl=https://raw.githubusercontent.com/KawOat9/Scripts/refs/heads/main/Shadowrocket/iTunesReceipt.sgmodule
+#!name=iTunesReceipt ✨
+#!desc=Unlock Collection
+#!author=https://github.com/KawOat9/Scripts/blob/main/Shadowrocket/iTunesReceipt.sgmodule
+#!icon=https://raw.githubusercontent.com/KawOat9/icons/main/receipt-apple.png
+#!category=APP
+
+[Script]
+# iTunes Receipt
+iTunesReceipt = type=http-response, pattern=^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt, script-path=https://raw.githubusercontent.com/KawOat9/Scripts/main/iTunesReceipt.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% buy.itunes.apple.com
