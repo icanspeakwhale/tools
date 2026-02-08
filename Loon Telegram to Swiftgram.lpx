@@ -1,0 +1,11 @@
+#!name=Swiftgram
+#!desc=Telegram external links redirect to Swiftgram
+#!author=sooyaaabo[https://github.com/sooyaaabo]
+#!icon=https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Swiftgram.png
+#!openUrl=https://apps.apple.com/app/id6471879502
+
+[Rewrite]
+(https:\/\/)?t\.me\/(.+) sg://resolve?domain=$2 302
+
+[MITM]
+hostname = t.me
