@@ -1,0 +1,17 @@
+#! name  =  PhotoshopExpress   
+
+#!  desc   =   PhotoshopExpress    Unlock    a    premium    subscription    
+
+#!  icon   =   https   :   //raw.githubusercontent.com/deezertidal/private/main/icons/photoshop.png    
+
+#!  homepage   =   https   :   //yfamilys.com     
+
+#!  author   =   litieyin     
+
+[  MITM   ]     
+
+hostname   = %  APPEND  %   lcs  -  mobile  -   cops   .   adobe   .   io      
+
+[  Script   ]    
+
+PhotoshopExpress  =   type   =   http   -   response   ,   pattern   =^   https   :\   /\/lcs-mobile-cops\.adobe\.io\/mobile_profile,requires-body=1,script-path=https:/   /   raw   .   githubusercontent   .   com   /   litieyin   /   AD_VIP   /   main   /   Script   /   photoshop   .   js    
