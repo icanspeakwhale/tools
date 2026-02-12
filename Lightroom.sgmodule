@@ -6,7 +6,9 @@
 #!homepage=https://yfamilys.com
 #!author=I-am-R-E
 
-MITM]hostname = %APPEND% photos.adobe.io
+[MITM]
+
+hostname = %APPEND% photos.adobe.io
 
 [Script]
 
